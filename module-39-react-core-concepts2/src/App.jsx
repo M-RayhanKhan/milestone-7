@@ -1,6 +1,10 @@
 
 import './App.css'
 import Count from './Count'
+import Friends from './Friends'
+import Posts from './Posts'
+import Team from './Team'
+import Users from './Users'
 
 function App() {
   function handleClick() {
@@ -15,6 +19,10 @@ function App() {
   return (
     <>
       <h3>Vite + React</h3>
+      <Posts></Posts>
+      <Friends></Friends>
+      <Users></Users>
+      <Team></Team>
       <Count></Count>
       <button onClick={handleClick}>Click me</button>
       <button onClick={handleClick2}>SecondClick</button>
