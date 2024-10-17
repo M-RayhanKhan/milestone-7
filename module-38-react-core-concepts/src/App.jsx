@@ -1,13 +1,40 @@
 
+import Actor from './Actor';
 import './App.css'
+import BookStore from './BookStore';
+import Singer from './Singer';
 import True from './True';
 function App() {
+
+  const actors = ['shakib khan', 'salman shah', 'ruble', 'dipjol', 'manna']
+  const singerName = [
+    {id:1, name: 'Abu said', age: 28},
+    {id:2, name: 'Abu Rayhan', age: 27},
+    {id:3, name: 'Bodurozzaman', age: 29},
+  ]
+
+  const books = [
+    {id:1, name:'Physics', price: 150},
+    {id:2, name:'Math', price: 250},
+    {id:3, name:'Biology', price: 180},
+    {id:4, name:'Chemistry', price: 180},
+  ]
   return (
     <>
       <h1>Vite + React</h1>
-      <True task='learn react' isDone={true}></True>
+    <BookStore books={books}></BookStore>
+      {
+        singerName.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
+      }
+
+
+      <Actor name="Shakib khan"></Actor>
+      {
+        actors.map(act => <Actor name={act} ></Actor>)
+      }
+      {/* <True task='learn react' isDone={true}></True>
       <True task='core concepts'isDone={false} ></True>
-      <True task='Try JSX' isDone={true}></True>
+      <True task='Try JSX' isDone={true}></True> */}
       {/* <Device name="Laptop" price="50"></Device>
       <Device name="mobile" price="10"></Device>
       <Device name="watch" price="3"></Device>
